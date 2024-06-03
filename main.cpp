@@ -18,7 +18,7 @@ constexpr std::string_view help = R"(
 /******************************************************************************
  * Irtea test application
  * Usage:
- * app  [--ip_dst] [--tcp_sp] [--ip_src] [--tcp_dp] [--file]
+ * app  [--ip_dst] [--tcp_sp] [--ip_src] [--tcp_dp] [--file | --config]
  *
  * Examples:
  *
