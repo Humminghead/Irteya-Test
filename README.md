@@ -4,7 +4,7 @@
  Irtea test application
  
  Usage:
-  app  [--ip_dst] [--tcp_sp] [--ip_src] [--tcp_dp] [--file]
+  app  [--ip_dst] [--tcp_sp] [--ip_src] [--tcp_dp] [--file | --config]
  
   Examples:
  
@@ -14,6 +14,7 @@
   app --config /tmp/config/run.json
  
   Config example:
+  ```json
     {
        "handlers":[
           {
@@ -23,5 +24,6 @@
           }
        ]
     }
+```
  
  
