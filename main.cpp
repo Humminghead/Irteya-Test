@@ -91,6 +91,7 @@ int main(int argc, char **argv) {
 
   std::string bpfFilterString{"ip and src <IP_SRC> and dst <IP_DST> and tcp and src port <TCP_SP> and dst port <TCP_DP>" };
   bool bpfFilterWasModified{false};
+  bool hasConfig           {false};
 
   std::vector<capture::descriptors::PcapHandler> handlersConfigs;
   std::vector<std::shared_ptr<capture::PcapHandler>> handlers{};
@@ -127,9 +128,11 @@ int main(int argc, char **argv) {
   });
 
   cmdHandler.AddKey(
-      {"config", nullptr, 1}, [&pcapCfg, &handlersConfigs](auto *p) {
+      {"config", nullptr, 1}, [&pcapCfg, &handlersConfigs, &hasConfig](auto *p) {
         if (!p)
           return;
+
+        hasConfig = true;
 
         std::filesystem::path path(p);
         if (const auto ext = path.extension(); ext != ".json")
@@ -163,8 +166,10 @@ int main(int argc, char **argv) {
   if (!bpfFilterWasModified)
     return 0;
 
-  pcapCfg.mBpfFilter = bpfFilterString;
-  handlersConfigs.push_back(pcapCfg);
+  if (!hasConfig) {
+    pcapCfg.mBpfFilter = bpfFilterString;
+    handlersConfigs.push_back(pcapCfg);
+  }
 
   TcpReassemblyConnMgr connMgr;
   std::mutex tcpReassemblyMutex;

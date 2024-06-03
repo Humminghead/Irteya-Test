@@ -100,7 +100,7 @@ void PcapHandler::OpenPcap() {
   } else {
     throw std::runtime_error(
         "Incompatible source: " + src +
-        "\" (possible values are: \"interface\", \"pcap_file\"");
+        "\" (possible values are: \"hw\", \"file\"");
   }
 
   if (!mImpl->mPcapFdPtr)
