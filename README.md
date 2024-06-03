@@ -1,7 +1,4 @@
-# Irteya-Test
-
-
- Irtea test application
+# Irtea test application
  
  Usage:
   app  [--ip_dst] [--tcp_sp] [--ip_src] [--tcp_dp] [--file | --config]
@@ -25,5 +22,15 @@
        ]
     }
 ```
- 
+## Build how-to:
+
+```
+git clone https://github.com/Humminghead/Irteya-Test.git
+cd Irteya-Test/
+cmake ./CMakeLists.txt -DCMAKE_C_COMPILER=/usr/bin/gcc-11 -DCMAKE_CXX_COMPILER=/usr/bin/g++-11 
+cmake --build . -j16
+ls -la
+-rwxrwxr-x  1 user user 1546112 Jun  3 12:26 irteya-test
+
+```
  
