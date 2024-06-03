@@ -2,7 +2,7 @@
    "handlers":[
       {         
          "traffic_source":"file",
-         "pcap_file":"/home/user/Desktop/Interview/citadel/pcap/http_with_jpegs.cap",
+         "pcap_file":"/tmp/http_with_jpegs.cap",
          "filter":"ip and src 10.1.1.1 and dst 10.1.1.101 and tcp and src port 80 and dst port 3200" 
       }
    ]
