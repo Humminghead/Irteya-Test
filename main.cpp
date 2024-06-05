@@ -163,7 +163,7 @@ int main(int argc, char **argv) {
   if (helpInvoked)
     return 0;
 
-  if (!bpfFilterWasModified)
+  if (!hasConfig && !bpfFilterWasModified)
     return 0;
 
   if (!hasConfig) {
