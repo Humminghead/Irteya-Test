@@ -1,5 +1,5 @@
-#include <GetOptPP/ConsoleKeyOption.h>
-#include <GetOptPP/ConsoleOptionsHandler.h>
+#include <ConsoleKeyOption.h>
+#include <ConsoleOptionsHandler.h>
 #include <PcapHandler.h>
 #include <PcapHandlerDscr.h>
 #include <filesystem>
