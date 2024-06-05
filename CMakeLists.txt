@@ -14,7 +14,7 @@ FetchContent_Declare(
 FetchContent_Declare(
   GetOpt
   GIT_REPOSITORY https://github.com/Humminghead/GetoptPlusPlus.git
-  GIT_TAG 1d8f5bd0255b5cde8c8c609e1c22b9f70360698f
+  GIT_TAG dd2837
 )
 
 FetchContent_Declare(
